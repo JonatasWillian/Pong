@@ -29,6 +29,7 @@ public class HighScoreManager : MonoBehaviour
 
     public void SavePlayerWin(Player p)
     {
-        /*PlayerPrefs.SetString(keyToSave, p.playerName);*/
+        PlayerPrefs.SetString(keyToSave, p.playerName.text);
+        UpdateText();
     }
 }
