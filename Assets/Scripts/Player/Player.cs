@@ -5,6 +5,9 @@ using TMPro;
 
 public class Player : MonoBehaviour
 {
+    [Header("Player Name")]
+    public string playerName;
+
     [Header("Speed")]
     public float speed = 10f;
 
@@ -16,6 +19,7 @@ public class Player : MonoBehaviour
     public Rigidbody2D myRigidbody2D;
 
     [Header("Points")]
+    public int maxPoints = 2;
     public int currentPoints;
     public TextMeshProUGUI uiTextPoints;
 
@@ -24,7 +28,12 @@ public class Player : MonoBehaviour
         ResetPlayer();
     }
 
-    private void ResetPlayer()
+    public void SetName(string s)
+    {
+        playerName = s;
+    }
+
+    public void ResetPlayer()
     {
         currentPoints = 0;
         UpdateUI();
@@ -46,6 +55,7 @@ public class Player : MonoBehaviour
     {
         currentPoints++;
         UpdateUI();
+        CheckMaxPoints();
         Debug.Log(currentPoints);
     }
 
@@ -54,4 +64,12 @@ public class Player : MonoBehaviour
         uiTextPoints.text = currentPoints.ToString();
     }
 
+    private void CheckMaxPoints()
+    {
+        if (currentPoints >= maxPoints)
+        {
+            GameManager.Instance.EndGame();
+            HightScoreManager.Instance.SavePlayerWin(this);
+        }
+    }
 }
