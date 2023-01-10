@@ -28,26 +28,23 @@ public class StateMachine : MonoBehaviour
         dictionaryStates.Add(States.MENU, new StateBase());
         dictionaryStates.Add(States.PLAYING, new StatePlaying());
         dictionaryStates.Add(States.RESET_POSITION, new StateResetPosition());
-        dictionaryStates.Add(States.END_GAME, new StateBase());
+        dictionaryStates.Add(States.END_GAME, new StateEndGame());
 
         SwitchState(States.MENU);
     }
 
-    private void SwitchState(States states)
+    public void SwitchState(States states)
     {
         if (_currentState != null) _currentState.OnStateExit();
 
         _currentState = dictionaryStates[states];
+
+        if(_currentState != null) _currentState.OnStateEnter();
     }
 
     private void Update()
     {
         if (_currentState != null) _currentState.OnStateStay();
-
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            SwitchState(States.PLAYING);
-        }
     }
 
     public void ResetPosition()
