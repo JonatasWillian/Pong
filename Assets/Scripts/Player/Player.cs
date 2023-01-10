@@ -6,7 +6,7 @@ using TMPro;
 public class Player : MonoBehaviour
 {
     [Header("Player Name")]
-    public string playerName;
+    public TextMeshProUGUI playerName;
 
     [Header("Speed")]
     public float speed = 10f;
@@ -28,9 +28,9 @@ public class Player : MonoBehaviour
         ResetPlayer();
     }
 
-    public void SetName(string s)
+    public void SetName(TextMeshProUGUI textMeshProUGUI)
     {
-        playerName = s;
+        playerName = textMeshProUGUI;
     }
 
     public void ResetPlayer()
@@ -69,7 +69,7 @@ public class Player : MonoBehaviour
         if (currentPoints >= maxPoints)
         {
             GameManager.Instance.EndGame();
-            HightScoreManager.Instance.SavePlayerWin(this);
+            HighScoreManager.Instance.SavePlayerWin(this);
         }
     }
 }
