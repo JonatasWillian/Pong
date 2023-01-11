@@ -137,7 +137,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e5630dade773fd42856074b8c9ea90e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
+  playerName: {fileID: 0}
+  speed: 23
   keyCodeMoveUp: 119
   keyCodeMoveDown: 115
   myRigidbody2D: {fileID: 4538905555910777075}
+  maxPoints: 2
+  currentPoints: 0
+  uiTextPoints: {fileID: 0}
