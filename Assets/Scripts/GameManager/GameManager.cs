@@ -33,11 +33,12 @@ public class GameManager : MonoBehaviour
         Instance = this;
 
         listPlayers = FindObjectsOfType<Player>();
+        PauseOn();
     }
 
     public void PauseOn()
     {
-        if (_podePausar) return;
+        //if (_podePausar) return;
 
         if(Input.GetKeyDown(keyCodeESC))
         {
