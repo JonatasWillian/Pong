@@ -14,7 +14,6 @@ public class TriggerPoint : MonoBehaviour
     {
         if (collision.transform.tag == tagBall)
         {
-            Debug.Log("Entrou no trigger");
             CountPoint();
         }
     }
