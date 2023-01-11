@@ -17,9 +17,16 @@ public class GameManager : MonoBehaviour
     [Header("StateMachine")]
     public StateMachine stateMachine;
 
+    [Header("Input")]
+    public KeyCode keyCodeESC = KeyCode.Escape;
+
+    [Header("UI")]
+    public GameObject uiPause;
+
     public static GameManager Instance;
 
     private bool _blocked;
+    private bool _podePausar = false;
 
     private void Awake()
     {
@@ -27,6 +34,27 @@ public class GameManager : MonoBehaviour
 
         listPlayers = FindObjectsOfType<Player>();
     }
+
+    public void PauseOn()
+    {
+        if (_podePausar) return;
+
+        if(Input.GetKeyDown(keyCodeESC))
+        {
+            Debug.Log("ESC");
+            Time.timeScale = 0;
+            uiPause.SetActive(true);
+        }
+    }
+
+    /*public void PauseOff()
+    {
+        if (Input.GetKeyDown(keyCodeESC))
+        {
+            Time.timeScale = 1;
+            uiPause.SetActive(false);
+        }
+    }*/
 
     public void ResetBall()
     {
@@ -53,12 +81,14 @@ public class GameManager : MonoBehaviour
     {
         ballBase.CanMove(true);
         _blocked = false;
+        _podePausar = true;
     }
 
     public void EndGame()
     {
         stateMachine.SwitchState(StateMachine.States.END_GAME);
         _blocked = true;
+        _podePausar = false;
     }
 
     public void ShowMainMenu()
