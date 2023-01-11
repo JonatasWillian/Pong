@@ -4098,7 +4098,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 949169927155749276, guid: cc8380e65f788af4a95892fe4355f950, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.10601807
+      value: 0.10595703
       objectReference: {fileID: 0}
     - target: {fileID: 949169927155749276, guid: cc8380e65f788af4a95892fe4355f950, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4368,27 +4368,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8833770154615466233, guid: ff8f0becd9108b441b992c641514b07d, type: 3}
       propertyPath: speed.x
-      value: -12
+      value: -1000
       objectReference: {fileID: 0}
     - target: {fileID: 8833770154615466233, guid: ff8f0becd9108b441b992c641514b07d, type: 3}
       propertyPath: speed.y
-      value: 12
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 8833770154615466233, guid: ff8f0becd9108b441b992c641514b07d, type: 3}
       propertyPath: randSpeedX.x
-      value: 12
+      value: 1300
       objectReference: {fileID: 0}
     - target: {fileID: 8833770154615466233, guid: ff8f0becd9108b441b992c641514b07d, type: 3}
       propertyPath: randSpeedX.y
-      value: 13
+      value: 1300
       objectReference: {fileID: 0}
     - target: {fileID: 8833770154615466233, guid: ff8f0becd9108b441b992c641514b07d, type: 3}
       propertyPath: randSpeedY.x
-      value: -12
+      value: -1200
       objectReference: {fileID: 0}
     - target: {fileID: 8833770154615466233, guid: ff8f0becd9108b441b992c641514b07d, type: 3}
       propertyPath: randSpeedY.y
-      value: 13
+      value: 1200
       objectReference: {fileID: 0}
     - target: {fileID: 8833770154615466235, guid: ff8f0becd9108b441b992c641514b07d, type: 3}
       propertyPath: m_Name
