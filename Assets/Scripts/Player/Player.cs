@@ -56,7 +56,6 @@ public class Player : MonoBehaviour
         currentPoints++;
         UpdateUI();
         CheckMaxPoints();
-        Debug.Log(currentPoints);
     }
 
     private void UpdateUI()
