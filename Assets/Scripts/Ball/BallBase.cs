@@ -17,18 +17,20 @@ public class BallBase : MonoBehaviour
     private Vector3 _startPosition;
     private Vector3 startSpeed;
     private bool _canMove = false;
+    private Rigidbody2D rb;
 
     private void Awake()
     {
         _startPosition = transform.position;
         startSpeed = speed;
+        rb = GetComponent<Rigidbody2D>();
     }
 
-    void Update()
+    private void FixedUpdate()
     {
         if (!_canMove) return;
 
-        transform.Translate(speed);
+        rb.MovePosition(transform.position + speed * Time.deltaTime);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
