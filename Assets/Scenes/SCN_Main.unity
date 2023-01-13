@@ -2812,7 +2812,7 @@ MonoBehaviour:
   timeSetBallFree: 1
   uiMainMenu: {fileID: 1729879863}
   stateMachine: {fileID: 1345535248}
-  keyCode: 32
+  keyCode: 27
   uiPause: {fileID: 807619005}
 --- !u!4 &1487009981
 Transform:
