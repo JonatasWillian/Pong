@@ -1917,7 +1917,7 @@ PrefabInstance:
       objectReference: {fileID: 659993242}
     - target: {fileID: 624756307901023749, guid: 693cbe4fc3c249549844e42e1e4a6dd9, type: 3}
       propertyPath: speed
-      value: 23
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 624756307901023749, guid: 693cbe4fc3c249549844e42e1e4a6dd9, type: 3}
       propertyPath: maxPoints
@@ -1966,7 +1966,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3742491117998374088, guid: 5e285b32b5bb9b14d8259123acc3629f, type: 3}
       propertyPath: m_text
-      value: Menu
+      value: Sair
       objectReference: {fileID: 0}
     - target: {fileID: 3742491117998374088, guid: 5e285b32b5bb9b14d8259123acc3629f, type: 3}
       propertyPath: m_fontSize
@@ -2584,6 +2584,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1181360962}
   m_CullTransparentMesh: 1
+--- !u!1 &1225334003 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5851087593829187361, guid: 5e285b32b5bb9b14d8259123acc3629f, type: 3}
+  m_PrefabInstance: {fileID: 886865191}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1225334007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1225334003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f7577bfa3bbd9e40b44cdb4256d8291, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1245293115
 GameObject:
   m_ObjectHideFlags: 0
@@ -2795,7 +2812,7 @@ MonoBehaviour:
   timeSetBallFree: 1
   uiMainMenu: {fileID: 1729879863}
   stateMachine: {fileID: 1345535248}
-  keyCodeESC: 27
+  keyCode: 32
   uiPause: {fileID: 807619005}
 --- !u!4 &1487009981
 Transform:
@@ -3156,7 +3173,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 949169927155749276, guid: cc8380e65f788af4a95892fe4355f950, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.567
+      value: -0.5670166
       objectReference: {fileID: 0}
     - target: {fileID: 949169927155749276, guid: cc8380e65f788af4a95892fe4355f950, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3920,7 +3937,7 @@ PrefabInstance:
       objectReference: {fileID: 659993242}
     - target: {fileID: 624756307901023749, guid: 693cbe4fc3c249549844e42e1e4a6dd9, type: 3}
       propertyPath: speed
-      value: 23
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 624756307901023749, guid: 693cbe4fc3c249549844e42e1e4a6dd9, type: 3}
       propertyPath: maxPoints
@@ -4416,27 +4433,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8833770154615466233, guid: ff8f0becd9108b441b992c641514b07d, type: 3}
       propertyPath: speed.x
-      value: -1000
+      value: -8
       objectReference: {fileID: 0}
     - target: {fileID: 8833770154615466233, guid: ff8f0becd9108b441b992c641514b07d, type: 3}
       propertyPath: speed.y
-      value: 1000
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8833770154615466233, guid: ff8f0becd9108b441b992c641514b07d, type: 3}
       propertyPath: randSpeedX.x
-      value: 1300
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 8833770154615466233, guid: ff8f0becd9108b441b992c641514b07d, type: 3}
       propertyPath: randSpeedX.y
-      value: 1300
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 8833770154615466233, guid: ff8f0becd9108b441b992c641514b07d, type: 3}
       propertyPath: randSpeedY.x
-      value: -1200
+      value: -11
       objectReference: {fileID: 0}
     - target: {fileID: 8833770154615466233, guid: ff8f0becd9108b441b992c641514b07d, type: 3}
       propertyPath: randSpeedY.y
-      value: 1200
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 8833770154615466235, guid: ff8f0becd9108b441b992c641514b07d, type: 3}
       propertyPath: m_Name
