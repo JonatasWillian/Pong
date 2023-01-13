@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
     public StateMachine stateMachine;
 
     [Header("Input")]
-    public KeyCode keyCodeESC = KeyCode.Escape;
+    public KeyCode keyCode = KeyCode.KeypadEnter;
 
     [Header("UI")]
     public GameObject uiPause;
@@ -26,7 +26,6 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     private bool _blocked;
-    private bool _podePausar = false;
 
     private void Awake()
     {
@@ -38,11 +37,9 @@ public class GameManager : MonoBehaviour
 
     public void PauseOn()
     {
-        //if (_podePausar) return;
-
-        if(Input.GetKeyDown(keyCodeESC))
+        if(Input.GetKeyDown(keyCode))
         {
-            Debug.Log("ESC");
+            Debug.Log("Input");
             Time.timeScale = 0;
             uiPause.SetActive(true);
         }
@@ -50,7 +47,7 @@ public class GameManager : MonoBehaviour
 
     /*public void PauseOff()
     {
-        if (Input.GetKeyDown(keyCodeESC))
+        if (Input.GetKeyDown(keyCode))
         {
             Time.timeScale = 1;
             uiPause.SetActive(false);
@@ -82,14 +79,13 @@ public class GameManager : MonoBehaviour
     {
         ballBase.CanMove(true);
         _blocked = false;
-        _podePausar = true;
+
     }
 
     public void EndGame()
     {
         stateMachine.SwitchState(StateMachine.States.END_GAME);
         _blocked = true;
-        _podePausar = false;
     }
 
     public void ShowMainMenu()
