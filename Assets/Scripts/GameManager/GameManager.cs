@@ -26,33 +26,36 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     private bool _blocked;
+    private bool _paused = false;
 
     private void Awake()
     {
         Instance = this;
 
         listPlayers = FindObjectsOfType<Player>();
-        PauseOn();
     }
 
-    public void PauseOn()
+    private void Update()
+    {
+        MainPause();
+    }
+
+    public void MainPause()
     {
         if(Input.GetKeyDown(keyCode))
         {
-            Debug.Log("Input");
-            Time.timeScale = 0;
+            _paused = !_paused;
+            Debug.Log("Pausing or unpausing game");
+            Time.timeScale = _paused ? 0 : 1;
             uiPause.SetActive(true);
         }
     }
 
-    /*public void PauseOff()
+    public void PauseOn()
     {
-        if (Input.GetKeyDown(keyCode))
-        {
-            Time.timeScale = 1;
-            uiPause.SetActive(false);
-        }
-    }*/
+        Time.timeScale = 0;
+        uiPause.SetActive(true);
+    }
 
     public void ResetBall()
     {
@@ -79,7 +82,6 @@ public class GameManager : MonoBehaviour
     {
         ballBase.CanMove(true);
         _blocked = false;
-
     }
 
     public void EndGame()
