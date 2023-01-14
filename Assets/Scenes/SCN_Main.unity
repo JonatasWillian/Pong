@@ -578,7 +578,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7019137501141646185, guid: 5e285b32b5bb9b14d8259123acc3629f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7019137501141646185, guid: 5e285b32b5bb9b14d8259123acc3629f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -610,7 +610,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7019137501141646185, guid: 5e285b32b5bb9b14d8259123acc3629f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: PauseOn
+      value: PauseOff
       objectReference: {fileID: 0}
     - target: {fileID: 7019137501141646185, guid: 5e285b32b5bb9b14d8259123acc3629f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -2826,7 +2826,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   listPlayers: []
   ballBase: {fileID: 740776495}
-  timeSetBallFree: 1
+  timeSetBallFree: 1.5
+  delayInitial: 2.5
   uiMainMenu: {fileID: 1729879863}
   stateMachine: {fileID: 1345535248}
   keyCode: 27
