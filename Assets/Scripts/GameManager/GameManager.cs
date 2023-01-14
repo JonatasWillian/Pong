@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     [Header("Ball Base")]
     public BallBase ballBase;
     public float timeSetBallFree = 1f;
+    public float delayInitial = 2.5f;
 
     [Header("Menus")]
     public GameObject uiMainMenu;
@@ -45,16 +46,20 @@ public class GameManager : MonoBehaviour
         if(Input.GetKeyDown(keyCode))
         {
             _paused = !_paused;
-            Debug.Log("Pausing or unpausing game");
             Time.timeScale = _paused ? 0 : 1;
-            uiPause.SetActive(true);
+            uiPause.SetActive(_paused);
         }
     }
 
-    public void PauseOn()
+    public void PauseOff()
     {
-        Time.timeScale = 0;
-        uiPause.SetActive(true);
+        StartCoroutine(DelayTimeScale());
+    }
+
+    IEnumerator DelayTimeScale()
+    {
+        yield return new WaitForSeconds(1.5f);
+        Time.timeScale = 1;
     }
 
     public void ResetBall()
@@ -80,8 +85,14 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
-        ballBase.CanMove(true);
+        StartCoroutine(DelayBall());
         _blocked = false;
+    }
+
+    IEnumerator DelayBall()
+    {
+        yield return new WaitForSeconds(delayInitial);
+        ballBase.CanMove(true);
     }
 
     public void EndGame()
