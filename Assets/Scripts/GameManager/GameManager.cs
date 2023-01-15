@@ -29,6 +29,8 @@ public class GameManager : MonoBehaviour
     private bool _blocked;
     private bool _paused = false;
 
+    private Coroutine delayUnPauseCoroutine = null;
+
     private void Awake()
     {
         Instance = this;
@@ -46,20 +48,35 @@ public class GameManager : MonoBehaviour
         if(Input.GetKeyDown(keyCode))
         {
             _paused = !_paused;
-            Time.timeScale = _paused ? 0 : 1;
-            uiPause.SetActive(_paused);
+            if (_paused)
+            {
+                Time.timeScale = 0;
+                uiPause.SetActive(true);
+
+                if (delayUnPauseCoroutine != null)
+                    StopCoroutine(delayUnPauseCoroutine);
+            }
+            else
+            {
+                uiPause.SetActive(false);
+                PauseOff();
+            }
         }
     }
 
     public void PauseOff()
     {
-        StartCoroutine(DelayTimeScale());
+        if(delayUnPauseCoroutine != null)
+            StartCoroutine(DelayTimeScale());
+        delayUnPauseCoroutine = StartCoroutine(DelayTimeScale());
     }
 
     IEnumerator DelayTimeScale()
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSecondsRealtime(1.5f);
         Time.timeScale = 1;
+        delayUnPauseCoroutine = null;
+        yield break;
     }
 
     public void ResetBall()
