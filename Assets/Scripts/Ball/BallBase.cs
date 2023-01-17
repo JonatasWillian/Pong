@@ -66,6 +66,13 @@ public class BallBase : MonoBehaviour
     {
         transform.position = _startPosition;
         speed = startSpeed;
+
+        int rand = Random.Range(0, 2);
+
+        if (rand == 1)
+        {
+            speed.x *= -1;
+        }
     }
 
     public void CanMove(bool state)
