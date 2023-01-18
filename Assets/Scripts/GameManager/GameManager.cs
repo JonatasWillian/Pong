@@ -23,7 +23,6 @@ public class GameManager : MonoBehaviour
 
     [Header("UI")]
     public GameObject uiPause;
-    public GameObject division;
 
     public static GameManager Instance;
 
@@ -53,7 +52,6 @@ public class GameManager : MonoBehaviour
             {
                 Time.timeScale = 0;
                 uiPause.SetActive(true);
-                division.SetActive(false);
 
                 if (delayUnPauseCoroutine != null)
                     StopCoroutine(delayUnPauseCoroutine);
@@ -61,7 +59,6 @@ public class GameManager : MonoBehaviour
             else
             {
                 uiPause.SetActive(false);
-                division.SetActive(true);
                 PauseOff();
             }
         }
