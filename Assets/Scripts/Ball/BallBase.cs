@@ -73,6 +73,10 @@ public class BallBase : MonoBehaviour
         {
             speed.x *= -1;
         }
+
+        float yRand = Random.Range(-1, 1);
+
+        speed.y *= yRand;
     }
 
     public void CanMove(bool state)
